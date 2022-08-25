@@ -1,4 +1,6 @@
 <script>
+	import Componente from './lib/Character.svelte';
+
 	let characters = [];
 	let page = 1;
 	async function loadCharacters() {
@@ -30,10 +32,6 @@
 
 <div class="">
 	{#each characters as character}
-		<div>
-			<img src={character.image} alt={character.name} />
-			<h2>{character.name}</h2>
-			<h3>{character.species}</h3>
-		</div>
+		<Componente {character} />
 	{/each}
 </div>
