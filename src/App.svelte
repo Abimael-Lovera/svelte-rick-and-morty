@@ -23,15 +23,18 @@
 	}
 </script>
 
-<h1>API Rick and Morty Svelte</h1>
+<h1 class="title">API Rick and Morty Svelte</h1>
 
-<div>
-	<button on:click={previousPage} disabled={page === 1}>previous</button>
-	<button on:click={nextPage}>next</button>
-</div>
-
-<div class="">
-	{#each characters as character}
-		<Componente {character} />
-	{/each}
+<div class="container">
+	<div class="btns">
+		<button on:click={previousPage} disabled={page === 1} class="btn"
+			>previous</button
+		>
+		<button on:click={nextPage} disabled={page > 41} class="btn">next</button>
+	</div>
+	<div class="grid">
+		{#each characters as character}
+			<Componente {character} />
+		{/each}
+	</div>
 </div>
